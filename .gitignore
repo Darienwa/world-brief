@@ -1,0 +1,6 @@
+data/
+*.exe
+proxy.txt
+runtime/
+*.log
+*.tmp

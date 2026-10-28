@@ -1,0 +1,173 @@
+{
+  "port": 4318,
+  "schedule": [
+    "08:00",
+    "20:00"
+  ],
+  "runOnStart": true,
+  "lookbackHours": 72,
+  "retentionDays": 30,
+  "maxPerFeed": 40,
+  "feeds": [
+    {
+      "id": "un-zh",
+      "name": "联合国新闻",
+      "lang": "zh",
+      "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml",
+      "enabled": true
+    },
+    {
+      "id": "un-en",
+      "name": "UN News",
+      "lang": "en",
+      "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+      "enabled": true
+    },
+    {
+      "id": "chinanews",
+      "name": "中新网·国际",
+      "lang": "zh",
+      "url": "https://www.chinanews.com.cn/rss/world.xml",
+      "enabled": true
+    },
+    {
+      "id": "people",
+      "name": "人民网·国际",
+      "lang": "zh",
+      "url": "http://www.people.com.cn/rss/world.xml",
+      "enabled": true
+    },
+    {
+      "id": "sputnik-zh",
+      "name": "俄罗斯卫星通讯社",
+      "lang": "zh",
+      "url": "https://sputniknews.cn/export/rss2/archive/index.xml",
+      "enabled": true
+    },
+    {
+      "id": "xinhua-en",
+      "name": "Xinhua World",
+      "lang": "en",
+      "url": "http://www.xinhuanet.com/english/rss/worldrss.xml",
+      "enabled": true
+    },
+    {
+      "id": "cgtn",
+      "name": "CGTN World",
+      "lang": "en",
+      "url": "https://www.cgtn.com/subscribe/rss/section/world.xml",
+      "enabled": true
+    },
+    {
+      "id": "globaltimes",
+      "name": "Global Times",
+      "lang": "en",
+      "url": "https://www.globaltimes.cn/rss/outbrain.xml",
+      "enabled": true
+    },
+    {
+      "id": "tass",
+      "name": "TASS",
+      "lang": "en",
+      "url": "https://tass.com/rss/v2.xml",
+      "enabled": true
+    },
+    {
+      "id": "france24",
+      "name": "France 24",
+      "lang": "en",
+      "url": "https://www.france24.com/en/rss",
+      "enabled": true
+    },
+    {
+      "id": "npr",
+      "name": "NPR World",
+      "lang": "en",
+      "url": "https://feeds.npr.org/1004/rss.xml",
+      "enabled": true
+    },
+    {
+      "id": "crisisgroup",
+      "name": "Crisis Group",
+      "lang": "en",
+      "url": "https://www.crisisgroup.org/rss.xml",
+      "enabled": true,
+      "hint": "military"
+    },
+    {
+      "id": "twz",
+      "name": "The War Zone",
+      "lang": "en",
+      "url": "https://www.twz.com/feed",
+      "enabled": true,
+      "hint": "military"
+    },
+    {
+      "id": "defensenews",
+      "name": "Defense News",
+      "lang": "en",
+      "url": "https://www.defensenews.com/arc/outboundfeeds/rss/?outputType=xml",
+      "enabled": true,
+      "hint": "military"
+    },
+    {
+      "id": "who",
+      "name": "WHO News",
+      "lang": "en",
+      "url": "https://www.who.int/rss-feeds/news-english.xml",
+      "enabled": true,
+      "hint": "health"
+    },
+    {
+      "id": "ecdc",
+      "name": "ECDC 疫情周报",
+      "lang": "en",
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed",
+      "enabled": true,
+      "hint": "health"
+    },
+    {
+      "id": "usgs",
+      "name": "USGS 重大地震",
+      "lang": "en",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.atom",
+      "enabled": true,
+      "hint": "disaster"
+    },
+    {
+      "id": "bbc",
+      "name": "BBC World（需代理）",
+      "lang": "en",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "enabled": false
+    },
+    {
+      "id": "bbc-zh",
+      "name": "BBC 中文（需代理）",
+      "lang": "zh",
+      "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+      "enabled": false
+    },
+    {
+      "id": "aljazeera",
+      "name": "Al Jazeera（需代理）",
+      "lang": "en",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "enabled": false
+    },
+    {
+      "id": "guardian",
+      "name": "The Guardian（需代理）",
+      "lang": "en",
+      "url": "https://www.theguardian.com/world/rss",
+      "enabled": false
+    },
+    {
+      "id": "dw-zh",
+      "name": "德国之声中文（需代理）",
+      "lang": "zh",
+      "url": "https://rss.dw.com/rdf/rss-chi-all",
+      "enabled": false
+    }
+  ]
+}

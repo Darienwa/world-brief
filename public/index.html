@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>全球要闻 · World Brief</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='12' fill='none' stroke='%239085e9' stroke-width='3'/><circle cx='16' cy='16' r='4' fill='%23e66767'/></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <a class="skip" href="#feed">跳到新闻列表</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="导航与筛选">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <div class="brand-name">World Brief</div>
+          <div class="brand-sub">全球要闻工作台</div>
+        </div>
+      </div>
+
+      <nav class="modules" aria-label="模块">
+        <button class="module active" aria-current="page"><span aria-hidden="true">◎</span> 全球要闻</button>
+        <button class="module" disabled title="预留模块"><span aria-hidden="true">＋</span> 更多模块（预留）</button>
+      </nav>
+
+      <section class="side-block">
+        <h2 class="side-title">分类</h2>
+        <div id="catFilters" class="filter-list" role="group" aria-label="按分类筛选"></div>
+      </section>
+
+      <section class="side-block">
+        <h2 class="side-title">地区</h2>
+        <div id="regionFilters" class="chips" role="group" aria-label="按地区筛选"></div>
+      </section>
+
+      <section class="side-block">
+        <h2 class="side-title">视图</h2>
+        <label class="check"><input type="checkbox" id="onlyStarred" /> 只看收藏</label>
+        <label class="check"><input type="checkbox" id="onlyUnread" /> 只看未读</label>
+        <label class="check"><input type="checkbox" id="hideOther" /> 隐藏「社会综合」</label>
+      </section>
+
+      <div class="side-foot">
+        <button class="ghost" id="openSettings">⚙ 定时与来源设置</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>全球要闻</h1>
+          <p class="subtle" id="statusLine">加载中…</p>
+        </div>
+        <div class="top-actions">
+          <div class="seg" role="radiogroup" aria-label="时间范围" id="rangeSeg">
+            <button role="radio" data-days="1" aria-checked="false">24 小时</button>
+            <button role="radio" data-days="3" aria-checked="true">3 天</button>
+            <button role="radio" data-days="7" aria-checked="false">7 天</button>
+            <button role="radio" data-days="30" aria-checked="false">30 天</button>
+          </div>
+          <div class="seg" role="radiogroup" aria-label="布局" id="viewSeg">
+            <button role="radio" data-view="board" aria-checked="true">分类看板</button>
+            <button role="radio" data-view="list" aria-checked="false">时间线</button>
+          </div>
+          <a class="btn ghost" id="exportBtn" href="/api/digest.md?days=1">导出简报</a>
+          <button class="btn primary" id="collectBtn">立即采集</button>
+        </div>
+      </header>
+
+      <section class="overview" aria-label="概览">
+        <div class="tiles" id="tiles"></div>
+        <figure class="trend">
+          <figcaption>
+            <span>每日新增 · 按分类</span>
+            <button class="link" id="toggleTable" aria-expanded="false">表格视图</button>
+          </figcaption>
+          <div id="trendChart" class="trend-chart"></div>
+          <div id="trendLegend" class="legend"></div>
+          <div id="trendTable" class="trend-table" hidden></div>
+        </figure>
+      </section>
+
+      <div class="searchbar">
+        <input type="search" id="search" placeholder="搜索标题、摘要或来源…  ( / 聚焦 )" aria-label="搜索" />
+        <span class="subtle" id="countLine"></span>
+      </div>
+
+      <section id="feed" class="feed board" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <dialog id="settings" aria-labelledby="settingsTitle">
+    <form method="dialog" class="dlg">
+      <h2 id="settingsTitle">定时与来源设置</h2>
+      <h3>每日采集时间</h3>
+      <p class="subtle">工作台运行期间，到点自动搜集，抓取范围为最近 <input type="number" id="lookback" min="6" max="720" step="6" class="num" /> 小时。</p>
+      <div id="timeList" class="time-list"></div>
+      <div class="row"><input type="time" id="newTime" aria-label="新增时间" /><button type="button" class="btn ghost" id="addTime">添加时间</button></div>
+      <h3>新闻来源</h3>
+      <p class="subtle">标注「需代理」的源当前网络无法直连，配置代理后再开启（见 README）。</p>
+      <div id="feedList" class="feed-list"></div>
+      <h3>最近运行</h3>
+      <div id="runList" class="run-list"></div>
+      <div class="dlg-actions">
+        <button value="cancel" class="btn ghost">关闭</button>
+        <button type="button" class="btn primary" id="saveSettings">保存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
